@@ -10,7 +10,7 @@ const lambda = new Lambda({
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   lambda.invoke(
     {
-      FunctionName: process.env.VPC_LAMBDA_FUNCTION_NAME,
+      FunctionName: process.env.VPC_LAMBDA_FUNCTION_NAME!,
       Payload: JSON.stringify({}),
     },
     (err, data) => {
